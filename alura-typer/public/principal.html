@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
 </head>
 <body>
     <h1>Alura Typer</h1>
@@ -10,9 +11,10 @@
     
     <ul class="informacoes">
         <li><span id="tamanho-frase">30</span>  palavras</li>
-        <li> <span>10</span>  Segundos</li>
+        <li> <span id="tempo-digitacao">3</span>  Segundos</li>
     </ul>
     <textarea class="campo-digitacao"  cols="40" rows="8"></textarea>
+    <button id="botao-reiniciar">Reiniciar jogo</button>
 
     <ul>
         <li><span id="contador-caracteres">0</span> caracteres</li>
