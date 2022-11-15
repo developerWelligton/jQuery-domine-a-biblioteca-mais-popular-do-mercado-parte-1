@@ -39,8 +39,8 @@ function inicializaCronometro(){
             if(tempoRestante < 1){
                 campo.attr("disabled",true);
                 clearInterval(cronometroID);
-            }
-            
+                campo.addClass("campo-desativado")
+            }  
         }, 1000);
     });  
 }
@@ -52,7 +52,9 @@ function reiniciaJogo(){
     $("#contador-palavras").text("0");
     $("#contador-caracteres").text("0");
     $("#tempo-digitacao").text(tempoInicial);
+    campo.addClass("campo-ativado")
     inicializaCronometro();
+     
 } 
 
  
