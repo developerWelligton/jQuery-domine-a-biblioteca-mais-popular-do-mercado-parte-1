@@ -73,18 +73,35 @@ function inserePlacar(){
     var usuario = "Welligton";
     var numPalavras = $("#contador-palavras").text();
     var botaoRemover = "<a href='#'><i class='small material-icons'>delete</i></a>"
-    var linha = "<tr>" +
-                    "<td>" + usuario + "</td>"+
-                    "<td>" + numPalavras + "</td>"+
-                    "<td>" + botaoRemover + "</td>"+
-                "</tr>";
+    var linha = novaLinha(usuario,numPalavras);
+    linha.find(".botao-remover").click(removeLinha);
 
-    corpoTabela.prepend(linha)
+    corpoTabela.append(linha);
 }
-$(".botao-remover").click(function(event){
+function novaLinha(usuario, palavras){
+    var linha = $("<tr>");
+    var colunaUsuario = $("<td>");
+    var colunaPalavras = $("<td>").text(palavras);
+    var colunaRemover = $("<td>");
+
+    var link = $("<a>").attr("href","#").addClass("botao-remover");
+    var icone = $("<i>").addClass("small").addClass("material-icons").text("delete");
+    // Icone dentro do <a>
+    link.append(icone);
+
+    // <a> dentro do <td>
+    colunaRemover.append(link);
+
+    // Os três <td> dentro do <tr>
+    linha.append(colunaUsuario);
+    linha.append(colunaPalavras);
+    linha.append(colunaRemover);
+    return linha;
+}
+function removeLinha(event){
     event.preventDefault();
     $(this).parent().parent().remove();
-});
+}
 function reiniciaJogo(){
     campo.attr("disabled",false);
     campo.val("");
