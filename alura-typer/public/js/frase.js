@@ -9,7 +9,15 @@ function fraseAleatoria(){
         method: 'GET',
         dataType: 'json',
         success: trocaFraseAleatoria
-    });
+    }).fail(
+        function(){
+            $("#erro").toggle();
+            setTimeout(function(){
+                $("#erro").toggle();
+            },2500);
+             
+        }
+    );
 }
  
 
