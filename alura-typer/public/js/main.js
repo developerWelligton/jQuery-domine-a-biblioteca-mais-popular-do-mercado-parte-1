@@ -9,6 +9,11 @@ $(document).ready (function(){
     $("#botao-reiniciar").click(reiniciaJogo);
 });
 
+function atualizaTempoInicial(tempo){  
+    tempoInicial = tempo;
+    $("#tempo-digitacao").text(tempo)
+}
+
 function atualizaTamanhoFrase(){
    var frase = $(".frase").text();
 var numPalavras = frase.split(" ").length; 
@@ -32,8 +37,9 @@ function inicializaContadores(){
 
 
 function inicializaCronometro(){
-    var tempoRestante = $("#tempo-digitacao").text();
+    
     campo.one("focus", function(){
+        var tempoRestante = $("#tempo-digitacao").text();
         var cronometroID = setInterval(function(){
             tempoRestante--;
             $("#tempo-digitacao").text(tempoRestante);
