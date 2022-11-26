@@ -1,6 +1,7 @@
 $("#botao-frase").click(fraseAleatoria); 
 
 function fraseAleatoria(){ 
+    $("#spinner").show();
 
     $.get({
         url: 'http://localhost:3000/frases',
@@ -17,7 +18,9 @@ function fraseAleatoria(){
             },2500);
              
         }
-    );
+    ).always(function(){
+        $("#spinner").hide();
+    })
 }
  
 
