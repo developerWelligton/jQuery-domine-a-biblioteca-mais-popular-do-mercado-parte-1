@@ -37,3 +37,17 @@ body{
 #spinner{
     display: none;
 }
+#frase-id{
+    width: 30px;
+}
+
+#naoEncontrado{
+    color:red;
+    display: none;
+}
+#EncontradoNaoEspecificado{
+    color:red;
+    display: none;
+}
+
+ 
