@@ -50,4 +50,6 @@ body{
     display: none;
 }
 
- 
+ #botao-frase-sync{
+    float:right;
+ }
